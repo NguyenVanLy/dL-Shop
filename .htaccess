@@ -1,0 +1,26 @@
+#Turn on the rewriting engine
+#([0-9]+)
+#([a-zA-Z0-9-_]+)
+#401 - Authorization Required (cần password để truy nhập)
+#400 - Bad request (Lỗi do yêu cầu)
+#403 - Forbidden (không được vào)
+#404 - Wrong page (lỗi trang, không tìm thấy…)
+#500 - Internal Server Error (lỗi server)
+#Cú pháp: ErrorDocument 404 /laptrinhvien/404.html
+
+ReWriteEngine on
+RewriteRule ^trang-chu$ trang_chu.php
+RewriteRule ^dich-vu$ dich_vu.php
+RewriteRule ^gioi-thieu$ gioi_thieu.php
+RewriteRule ^lien-he$ lien_he.php
+RewriteRule ^dat-hang$ dat_hang.php
+RewriteRule ^gio-hang$ gio_hang.php
+RewriteRule ^san-pham$ san_pham.php
+RewriteRule ^san-pham/([0-9]+)/([0-9]+)$ san_pham.php?ma_nhom=$1&ma_loai=$2
+RewriteRule ^san-pham/([0-9]+)$ san_pham.php?ma_nhom=$1
+RewriteRule ^chi-tiet-san-pham/([0-9]+)$ chi_tiet_san_pham.php?ma_san_pham=$1
+
+ErrorDocument 404 http://dlshop.byethost7.com/404.html
+ErrorDocument 403 http://dlshop.byethost7.com/403.html
+
+RewriteRule ^quan-tri$ quantri.php

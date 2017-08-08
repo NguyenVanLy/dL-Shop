@@ -1,0 +1,1 @@
+<?php include_once("trang_chu.php") ?>

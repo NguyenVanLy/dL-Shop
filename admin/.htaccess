@@ -1,0 +1,35 @@
+#Turn on the rewriting engine
+#([0-9]+)
+#([a-zA-Z0-9-_]+)
+#401 - Authorization Required (cần password để truy nhập)
+#400 - Bad request (Lỗi do yêu cầu)
+#403 - Forbidden (không được vào)
+#404 - Wrong page (lỗi trang, không tìm thấy…)
+#500 - Internal Server Error (lỗi server)
+#Cú pháp: ErrorDocument 404 /laptrinhvien/404.html
+
+ReWriteEngine on
+RewriteRule ^quan-tri$ quantri.php
+RewriteRule ^nguoi-dung$ nguoi_dung.php
+RewriteRule ^khach-hang$ khach_hang.php
+RewriteRule ^san-pham$ san_pham.php
+RewriteRule ^hoa-don$ hoa_don.php
+RewriteRule ^nha-san-xuat$ nha_san_xuat.php
+RewriteRule ^loai-san-pham$ loai_san_pham.php
+RewriteRule ^nhom-san-pham$ nhom_san_pham.php
+RewriteRule ^them-nguoi-dung$ them_nguoi_dung.php
+RewriteRule ^lien-he$ lien_he.php
+RewriteRule ^danh-gia$ danh_gia.php
+RewriteRule ^dang-ki-nhan-tin$ dang_ki_nhan_tin.php
+
+RewriteRule ^sua-nguoi-dung/([0-9]+)$ sua_nguoi_dung.php?id=$1
+RewriteRule ^sua-san-pham/([0-9]+)$ sua_san_pham.php?ma_san_pham=$1
+RewriteRule ^chi-tiet-hoa-don/([0-9]+)$ chitiethoadon.php?ma_hoa_don=$1
+RewriteRule ^sua-nha-san-xuat/([0-9]+)$ sua_nha_san_xuat.php?ma_nsx=$1
+RewriteRule ^sua-loai-san-pham/([0-9]+)$ sua_loai_san_pham.php?ma_loai=$1
+RewriteRule ^sua-nhom-san-pham/([0-9]+)$ sua_nhom_san_pham.php?ma_nhom=$1
+RewriteRule ^cap-nhat-hinh/([0-9]+)$ cap_nhat_hinh.php?ma_san_pham=$1
+
+ErrorDocument 404 /dlshop/404.html
+ErrorDocument 403 /dlshop/403.html
+
